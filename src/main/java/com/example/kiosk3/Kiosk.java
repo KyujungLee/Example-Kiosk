@@ -1,15 +1,15 @@
-package com.example.kiosk2;
+package com.example.kiosk3;
 import java.util.List;
 import java.util.Scanner;
 
 public class Kiosk {
 
-    public static void Action() {
+    public static void start() {
 
         Scanner sc = new Scanner(System.in);
 
-        // 공유 인스턴스 생성 및 해당 인스턴스에 메뉴 저장.
-        MenuItem menuItem = MenuItem.menuItem();
+        // 인스턴스 생성 및 해당 인스턴스에 메뉴 저장.
+        MenuItem menuItem = new MenuItem();
         menuItem.setMenuItem("ShackBurger", "6.9", "토마토, 양상추, 쉑소스가 토핑된 치즈버거");
         menuItem.setMenuItem("SmokeShack", "8.9", "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거");
         menuItem.setMenuItem("Cheeseburger", "6.9", "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거");
@@ -27,7 +27,7 @@ public class Kiosk {
 
             // Verify.handling 매서드에서 String input 값을 검증
             try{
-                Verify.handling(input);
+                Verify.handling(input, menuItem);
             } catch (NumberFormatException | ArrayIndexOutOfBoundsException e){
                 System.out.println(e.getMessage());
                 continue;
