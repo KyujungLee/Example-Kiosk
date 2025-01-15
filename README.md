@@ -28,3 +28,12 @@
 - Verify 클래스 : 입력값 예외 검증 기능.
 - MenuItem 클래스 : 메뉴 각각의 인스턴스 생성 및 getter 매서드 기능.
 - Menu 클래스 : MenuItem 인스턴스를 관리하는 클래스.
+
+
+## Kiosk Lv.5
+- main 매서드 : 인스턴스 생성 및 동작 매서드 입력
+- Kiosk 클래스 : Kiosk Lv.4 의 전체 흐름을 제어
+- Verify 클래스 : 입력값 예외 검증 기능.
+- MenuItem 클래스 : 메뉴 각각의 인스턴스 생성 및 getter 매서드 기능.
+- Menu 클래스 : MenuItem 인스턴스를 관리하는 클래스.
+- StateType 클래스(Enum) : state의 상태를 체크하고 관리하는 기능.
