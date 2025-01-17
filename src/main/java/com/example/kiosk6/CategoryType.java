@@ -1,14 +1,9 @@
 package com.example.kiosk6;
 
 public enum CategoryType {
-    BURGERS("burgers"),DRINKS("drinks"),DESSERTS("desserts");
-    private String category;
 
-    CategoryType(String category){
-        this.category = category;
-    }
-
-    public String getCategory() {
-        return category;
-    }
+    // 카테고리를 명시한 enum 클래스
+    BURGERS,
+    DRINKS,
+    DESSERTS
 }

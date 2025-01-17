@@ -37,3 +37,16 @@
 - MenuItem 클래스 : 메뉴 각각의 인스턴스 생성 및 getter 매서드 기능.
 - Menu 클래스 : MenuItem 인스턴스를 관리하는 클래스.
 - StateType 클래스(Enum) : state의 상태를 체크하고 관리하는 기능.
+
+
+## Kiosk Lv.6 (도전과제)
+- main 매서드 : 메뉴 인스턴스 생성 및 kiosk 동작 매서드 입력.
+- Kiosk 클래스 : Kiosk Lv.6 의 전체 흐름을, 반복문의 조건과 STAGE 를 통해 제어.
+- DetermineStage 클래스 : STAGE 의 동작권한을 결정하는 클래스. 각 STAGE 에 맞는 입력조건을 검사 후 다음 STAGE 동작권한을 부여할지 말지 결정.
+- StageThrow 클래스 : DetermineStage 클래스에서, StageType 을 throw 할 수 있도록 Exception 을 상속받은 클래스.
+- StageType 클래스 (Enum) : stage 변수에 부여할 동작권한 명시.
+- MenuItem 클래스 : 메뉴 각각의 인스턴스 생성 및 getter 매서드 기능.
+- Menu 클래스 : MenuItem 인스턴스를 관리하는 클래스.
+- CategoryType 클래스 (Enum) : 각 카테고리를 명시.
+- ShoppingBag 클래스 : 선택한 메뉴를 저장 및 관리하는 클래스.
+- DiscountInfo 클래스 (Enum) : 할인 정보를 명시.
