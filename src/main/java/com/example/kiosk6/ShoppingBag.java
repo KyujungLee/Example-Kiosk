@@ -11,7 +11,7 @@ public class ShoppingBag {
     // 최종 선택한 메뉴를 저장하는 장바구니 필드
     private List<MenuItem> shoppingBag = new ArrayList<>();
 
-    public void printAskAddItem(){
+    public void printChooseAddItem(){
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1. 확인        2. 취소");
     }
@@ -22,7 +22,7 @@ public class ShoppingBag {
         menu.initSelectedItem();
         menu.initSelectedMenu();
     }
-    public void printSelectOrder(Menu menu){
+    public void printChoosePayment(Menu menu){
         int categoryCount = (int) menu.getMenu().stream()
                 .map(MenuItem::getCategoryType)
                 .distinct()
@@ -30,7 +30,7 @@ public class ShoppingBag {
         System.out.println( (categoryCount+1) + ". Orders  |  장바구니를 확인 후 주문합니다.");
         System.out.println( (categoryCount+2) + ". Cancel  |  진행중인 주문을 취소합니다.");
     }
-    public void printCheckOrder(){
+    public void printProceedPayment(){
         System.out.println("아래와 같이 주문하시겠습니까?\n");
         double totalPrice = shoppingBag.stream()
                 .mapToDouble(MenuItem::getPrice)
@@ -44,7 +44,7 @@ public class ShoppingBag {
         System.out.println("W "+totalPrice);
         System.out.println("\n1. 주문        2. 메뉴판");
     }
-    public void printDiscountInfo(){
+    public void printChooseDiscount(){
         System.out.println("할인 정보를 입력해주세요.");
         DiscountInfo[] discountInfo = DiscountInfo.values();
         for (int i = 0 ; i < discountInfo.length ; i++){
@@ -52,7 +52,7 @@ public class ShoppingBag {
         }
     }
     // 주문 완료 시 총금액 출력, 장바구니를 비우는 매서드
-    public void printCompleteOrder(String input){
+    public void printCompletePayment(String input){
         int select = Integer.parseInt(input)-1;
         DiscountInfo[] discountInfo = DiscountInfo.values();
         double totalPrice = shoppingBag.stream()
@@ -63,7 +63,7 @@ public class ShoppingBag {
     }
     // 장바구니를 비우는 매서드
     public void emptyShoppingBag(){
-        shoppingBag = new ArrayList<>();
+        shoppingBag = null;
     }
 
 

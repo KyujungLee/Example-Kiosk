@@ -5,6 +5,7 @@ public class Main {
         Menu menu = new Menu();
         ShoppingBag shoppingBag = new ShoppingBag();
 
+        // MenuItem 필드에 CateggoryType 까지 포함하여 명시
         menu.setMenu(new MenuItem(CategoryType.BURGERS ,"ShackBurger",6.9,"토마토, 양상추, 쉑소스가 토핑된 치즈버거"));
         menu.setMenu(new MenuItem(CategoryType.BURGERS ,"SmokeShack",8.9,"베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거"));
         menu.setMenu(new MenuItem(CategoryType.BURGERS ,"Cheeseburger",6.9,"포테이토 번과 비프패티, 치즈가 토핑된 치즈버거"));

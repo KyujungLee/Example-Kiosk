@@ -14,7 +14,7 @@ public class Menu {
 
 
     // 카테고리 출력 매서드
-    public void printCategory(){
+    public void printChooseMenu(){
         CategoryType[] category = CategoryType.values();
         System.out.println("[ MAIN MANU ]");
         for (int i = 0 ; i < category.length ; i++){
@@ -23,22 +23,15 @@ public class Menu {
         System.out.println("0. 종료");
     }
     // 선택한 카테고리의 메뉴 출력 매서드
-    public void printMenu(String input){
-        CategoryType[] category = CategoryType.values();
-        int select = Integer.parseInt(input) - 1 ;
-        selectedMenu = menu.stream()
-                .filter(menuItem -> menuItem.getCategoryType() == category[select])
-                .toList();
-        System.out.println("[ "+category[select]+" MANU ]");
+    public void printChooseItem(){
+        System.out.println("[ "+selectedMenu.get(0).getCategoryType()+" MANU ]");
         for (int i = 0 ; i < selectedMenu.size() ; i++){
             System.out.println(i+1+". "+selectedMenu.get(i).getName() + " | W " + selectedMenu.get(i).getPrice() + " | " +selectedMenu.get(i).getDescription());
         }
         System.out.println("0. 뒤로가기");
     }
     // 선택한 메뉴를 출력하는 매서드
-    public void printSelectedItem(String input){
-        int select = Integer.parseInt(input) - 1 ;
-        selectedItem = selectedMenu.get(select);
+    public void printSelectedItem(){
         System.out.println("선택한 메뉴: "+selectedItem.getName() + " | W " + selectedItem.getPrice() + " | " +selectedItem.getDescription());
     }
 
@@ -54,6 +47,17 @@ public class Menu {
     }
 
 
+    public void setSelectedMenu(String input){
+        int select = Integer.parseInt(input) - 1 ;
+        CategoryType[] category = CategoryType.values();
+        selectedMenu = menu.stream()
+                .filter(menuItem -> menuItem.getCategoryType() == category[select])
+                .toList();
+    }
+    public void setSelectedItem(String input){
+        int select = Integer.parseInt(input) - 1 ;
+        selectedItem = selectedMenu.get(select);
+    }
     public void setMenu(MenuItem menuItem){
         menu.add(menuItem);
     }
